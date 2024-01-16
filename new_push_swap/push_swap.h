@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:13:54 by fekiz             #+#    #+#             */
-/*   Updated: 2024/01/16 16:36:04 by fekiz            ###   ########.fr       */
+/*   Updated: 2024/01/16 17:16:26 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ long	ft_atoi(const char *str);
 long	ft_number(int sentinel, long *array);
 long	pivot(long *array, int sentinel);
 long	*ft_creator(char **av, int sentinel);
-long	*push_swap(long *stack_a, long *stack_b, long pvt, static int sentinel);
+long	*push_swap(long *stack_a, long *stack_b, long pvt, int *sentinel);
+long	pvt_crt(long *array, int *sentinel, long *temp, long pvt);
 
 int		num_control(long *array, long c, int sentinel);
 int		array_control(long *array, int sentinel);
@@ -38,6 +39,6 @@ int		white_spaces(char c);
 int		little_controler(long cont, int sentinel, long *array);
 
 void	ft_error(int c);
-void	pb(long *stack_a, long *stack_b, static int sentinel);
+void	pb(long *stack_a, long *stack_b, int *sentinel);
 
 #endif
