@@ -6,21 +6,21 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:27:11 by fekiz             #+#    #+#             */
-/*   Updated: 2024/01/16 17:16:03 by fekiz            ###   ########.fr       */
+/*   Updated: 2024/01/18 14:23:57 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	*ft_creator(char **av, int sentinel)
+long	*ft_creator(char **av, t_list *arr)
 {
-	long	*array;
 	int		i;
 	int		j;
+	long	*array;
 
 	i = 1;
 	j = 0;
-	array = (long *)malloc(sizeof(long) * sentinel);
+	array = (long *)malloc(sizeof(long) * arr->sentinel);
 	if (!array)
 		return (NULL);
 	while (av[i])
@@ -32,53 +32,46 @@ long	*ft_creator(char **av, int sentinel)
 	return (array);
 }
 // pvt'a göre push b veya diğer sıralamalar başlayacak int i = 0 oluşturup eğer stack_a[i] < pivot | stack_a[i] -> push_b
-long	*push_swap(long *stack_a, long *stack_b, long pvt, int *sentinel)
+
+long	push_swap(t_list *arr)
 {
-	int	i;
-	int	count;
+	static int	count;
+	int			i;
 
 	i = 0;
-	count = *sentinel;
-	stack_b = (long *)malloc(sizeof(long) * count);
-	if (!stack_b)
-		return (NULL);
-	if (pvt > stack_a[i])
-		pb(stack_a, stack_b, sentinel);
-	return (stack_a);
+	count = 0;
+	arr->stack_b = (long *)malloc(sizeof(long) * (arr->sentinel));
+	if (!arr->stack_b)
+		return (0);
+	printf("\n\n***%ld***\n\n", arr->stack_a[0]);
+	if (arr->pvt > arr->stack_a[i])
+		count += pb(arr);
+	printf("%ld\n", arr->stack_b[0]);
+	return (1);
 }
 
-long	pvt_crt(long *array, int *sentinel, long *temp, long pvt)
+void	pvt_crt(t_list *arr, char **av)
 {
-	int	c;
-
-	c = *sentinel;
-	if (array_control(array, c) == 1)
-		ft_error(1);
+	if (array_control(arr) == 1)
+		ft_error(arr);
 	else
-		pvt = pivot(temp, c);
-	push_swap(array, temp, pvt, sentinel);
-	return (pvt);
+		arr->pvt = pivot(arr);
+	free(arr->stack_a);
+	arr->stack_a = ft_creator(av, arr);
 }
 
 int	main(int ac, char **av)
 {
-	long	*temp;
-	long	*array;
-	long	pvt;
-	int		*sentinel;
+	t_list	*arr;
 
-	ac--;
-	sentinel = &ac;
-	pvt = 0;
-	temp = NULL;
-	array = NULL;
-	if (arg_control(av) == 0)
-	{
-		temp = ft_creator(av, *sentinel);
-		array = ft_creator(av, *sentinel);
-	}
-	else
-		ft_error(1);
-	pvt_crt(array, sentinel, temp, pvt);
-	// push_swap(array, temp, pvt);
+	arr = (t_list *)malloc(sizeof(t_list));
+	if (!arr)
+		return (0);
+	arr->sentinel = ac - 1;
+	if (arg_control(av) != 0)
+		ft_error(arr);
+	arr->stack_a = ft_creator(av, arr);
+	pvt_crt(arr, av);
+	push_swap(arr);
+	//printf("\n\n***%d***\n\n", arr->pvt_i);
 }

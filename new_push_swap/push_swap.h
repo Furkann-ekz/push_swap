@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:13:54 by fekiz             #+#    #+#             */
-/*   Updated: 2024/01/16 17:16:26 by fekiz            ###   ########.fr       */
+/*   Updated: 2024/01/18 14:22:41 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,32 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdio.h>
-// typedef struct s_list
-// {
-// 	int				content;
-// 	int				flag;
-// 	int				index;
-// 	struct s_list	*next;
-// }	t_list;
+
+typedef struct	s_list
+{
+	int		sentinel;
+	int		pvt_i;
+	long	pvt;
+	long	*temp;
+	long	*stack_a;
+	long	*stack_b;
+}				t_list;
 
 long	ft_atoi(const char *str);
-long	ft_number(int sentinel, long *array);
-long	pivot(long *array, int sentinel);
-long	*ft_creator(char **av, int sentinel);
-long	*push_swap(long *stack_a, long *stack_b, long pvt, int *sentinel);
-long	pvt_crt(long *array, int *sentinel, long *temp, long pvt);
+long	pivot(t_list *arr);
+long	ft_number(t_list *arr);
+long	*ft_creator(char **av, t_list *arr);
 
-int		num_control(long *array, long c, int sentinel);
-int		array_control(long *array, int sentinel);
+int		num_control(t_list *arr, long c);
+int		array_control(t_list *arr);
 int		arg_control(char **av);
 int		white_spaces(char c);
-int		little_controler(long cont, int sentinel, long *array);
+int		little_controler(long cont, t_list *arr);
+int		pa(t_list *arr);
+int		pb(t_list *arr);
 
-void	ft_error(int c);
-void	pb(long *stack_a, long *stack_b, int *sentinel);
+void	get_free(t_list *arr);
+void	pvt_crt(t_list *arr, char **av);
+void	ft_error(t_list *arr);
 
 #endif
