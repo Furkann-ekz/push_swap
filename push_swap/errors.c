@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:19:30 by fekiz             #+#    #+#             */
-/*   Updated: 2024/01/30 21:06:54 by fekiz            ###   ########.fr       */
+/*   Updated: 2024/01/30 21:54:44 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	error_syntax(char *str)
 		return (1);
 	if ((str[i] == '+' || str[i] == '-') && !(str[1] >= '0' && str[1] <= '9'))
 		return (1);
+	i++;
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

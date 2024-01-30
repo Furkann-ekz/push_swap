@@ -6,35 +6,32 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:02:00 by fekiz             #+#    #+#             */
-/*   Updated: 2024/01/30 21:36:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2024/01/30 21:55:24 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atoil(const char *str)
+static long	ft_atoil(const char *s)
 {
+	long	result;
+	int		sign;
 	int		i;
-	long	sign;
-	long	count;
 
 	i = 0;
+	result = 0;
 	sign = 1;
-	count = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (s[i] == ' ' || (s[i] <= 13 && s[i] >= 9))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 	{
-		if (str[i] == '-')
-			sign *= -1;
+		if (s[i] == '-')
+			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		count = (str[i] - 48) + (10 * count);
-		i++;
-	}
-	return (count * sign);
+	while (s[i] >= '0' && s[i] <= '9')
+		result = result * 10 + (s[i++] - '0');
+	return (result * sign);
 }
 
 static void	append_node(t_list **stack, int n)
@@ -61,7 +58,7 @@ static void	append_node(t_list **stack, int n)
 		node->prev = last_node;
 	}
 }
-
+#include "stdio.h"
 void	init_stack_a(t_list **a, char **argv)
 {
 	long	n;
