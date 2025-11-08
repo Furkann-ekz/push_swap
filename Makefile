@@ -1,6 +1,9 @@
 SRCS	=	Main.c			\
 			Check_args.c	\
-			Ft_atoi_itoa.c
+			Ft_atoi.c		\
+			Ft_strlen.c		\
+			Check_limits.c	\
+			Ft_strcmp.c
 
 OBJS	=	$(SRCS:.c=.o)
 RM		=	rm -f

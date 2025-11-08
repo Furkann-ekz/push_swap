@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.c                                             :+:      :+:    :+:   */
+/*   Ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 14:04:14 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 17:31:19 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/08 16:31:27 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/08 17:07:47 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int	main(int ac, char **av)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_list	*list;
+	size_t	i;
 
-	if (ac < 2)
-		return (0);
-	if (check_args((const char **)(av + 1)))
-		return (write (2, "Error\n", 6));
-	list = malloc(sizeof(t_list));
-	if (!list)
-		return (write (2, "Error\n", 6));
+	i = 0;
+	if (!s1 || !s2)
+		return (1);
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
 }

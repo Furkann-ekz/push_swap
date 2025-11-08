@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 16:17:30 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/08 17:29:47 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@
 
 typedef struct s_list
 {
-	int		num;
+	int				num;
+	struct s_list	*next;
+	struct s_list	*prev;
+	struct s_list	*target;
 }	t_list;
 
-typedef struct s_vector
-{
-	size_t	i;
-	size_t	j;
-	int		plus;
-	int		minus;
-	int		zero;
-}	t_vector;
-
-int		check_args(char **av);
-int		ft_strcmp(char *s1, char *s2);
+int		check_args(const char **av);
+int		ft_strcmp(const char *s1, const char *s2);
+int		check_limits(const char **av);
+int		ft_atoi(const char *str);
+size_t	ft_strlen(const char *str);
 
 #endif

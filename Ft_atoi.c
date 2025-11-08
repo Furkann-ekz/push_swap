@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ft_atoi_itoa.c                                     :+:      :+:    :+:   */
+/*   Ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:48:57 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 15:01:02 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/08 17:27:55 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,53 +35,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (count * sign);
-}
-
-static int	ft_count(int c)
-{
-	int		count;
-	long	num;
-
-	num = c;
-	count = 0;
-	if (c == 0)
-		return (1);
-	if (num < 0)
-	{
-		num *= -1;
-		count++;
-	}
-	while (num > 0)
-	{
-		num = num / 10;
-		count++;
-	}
-	return (count);
-}
-
-char	*ft_itoa(int n)
-{
-	int		digit;
-	long	nbr;
-	char	*str;
-
-	nbr = n;
-	digit = ft_count(nbr);
-	str = malloc(digit + 1);
-	if (!str)
-		return (NULL);
-	str[digit--] = '\0';
-	if (nbr == 0)
-		str[digit] = '0';
-	if (nbr < 0)
-	{
-		str[0] = '-';
-		nbr *= -1;
-	}
-	while (nbr > 0)
-	{
-		str[digit--] = nbr % 10 + 48;
-		nbr = nbr / 10;
-	}
-	return (str);
 }
