@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   Check_duplicates.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 16:31:27 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 15:33:42 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/09 15:07:03 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/09 17:26:00 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	check_duplicates(const char **av)
 {
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	if (!s1 || !s2)
-		return (1);
-	while (s1[i] || s2[i])
+	i = -1;
+	while (av[++i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		j = -1;
+		while (av[++j])
+			if (ft_atoi(av[i]) == ft_atoi(av[j]) && i != j)
+				return (1);
 	}
 	return (0);
 }

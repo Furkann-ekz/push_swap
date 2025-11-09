@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:23:01 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 17:32:52 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/09 15:33:36 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ static int	for_sign_strings(const char **av)
 			if (av[i][j] && (av[i][j] == '-' || av[i][j] == '+')
 				&& (av[i][j + 1]
 				&& !(av[i][j + 1] >= '0' && av[i][j + 1] <= '9')))
-					return (1);
+				return (1);
 			else if (av[i][j] && (av[i][j] >= '0' && av[i][j] <= '9')
 				&& (av[i][j + 1]
 					&& (av[i][j + 1] == '-' || av[i][j + 1] == '+')))
-					return (1);
+				return (1);
 		}
 	}
 	return (0);
@@ -114,6 +114,8 @@ int	check_args(const char **av)
 	if (for_empty_strings(av))
 		return (1);
 	if (check_limits(av))
+		return (1);
+	if (check_duplicates(av))
 		return (1);
 	return (0);
 }

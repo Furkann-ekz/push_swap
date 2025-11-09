@@ -1,9 +1,16 @@
-SRCS	=	Main.c			\
-			Check_args.c	\
-			Ft_atoi.c		\
-			Ft_strlen.c		\
-			Check_limits.c	\
-			Ft_strcmp.c
+SRCS	=	Check_args.c				\
+			Check_duplicates.c			\
+			Check_limits.c				\
+			Check_sorted.c				\
+			Create_stack_and_nodes.c	\
+			Exit.c						\
+			Free_allocations.c			\
+			Ft_atoi.c					\
+			Ft_calloc.c					\
+			Ft_strcmp.c					\
+			Ft_strlen.c					\
+			Main.c						\
+			Start.c						
 
 OBJS	=	$(SRCS:.c=.o)
 RM		=	rm -f

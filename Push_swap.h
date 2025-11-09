@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 17:29:47 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/09 17:26:55 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,28 @@
 typedef struct s_list
 {
 	int				num;
+	int				index; // sayının (sıralanmış durumda) olması gereken indeksi
+	int				cost_a; // elemanı a stackinin tepesine getirme maliyeti
+	int				cost_b; // elemanı b stackinin tepesine getirme maliyeti
 	struct s_list	*next;
 	struct s_list	*prev;
 	struct s_list	*target;
 }	t_list;
 
 int		check_args(const char **av);
-int		ft_strcmp(const char *s1, const char *s2);
+int		check_duplicates(const char **av);
 int		check_limits(const char **av);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi(const char *str);
+
 size_t	ft_strlen(const char *str);
 
+void	*ft_calloc(size_t count, size_t size);
+void	exit_error(t_list **a, t_list **b, int exit_num);
+void	frees(t_list *list);
+void	add_node_to_stack(t_list **stack, t_list *new_node);
+void	start(const char **av);
+void	check_sorted(t_list **list);
+
+t_list	*new_node(int num);
 #endif

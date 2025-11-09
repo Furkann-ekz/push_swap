@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   Exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 16:31:27 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 15:33:42 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/09 15:47:49 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/09 17:05:10 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	exit_error(t_list **a, t_list **b, int exit_num)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s1 || !s2)
-		return (1);
-	while (s1[i] || s2[i])
+	if (a && *a)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		frees(*a);
+		*a = NULL;
 	}
-	return (0);
+	if (b && *b)
+	{
+		frees(*b);
+		*b = NULL;
+	}
+	if (exit_num != 0)
+		write (2, "Error\n", 6);
+	exit (exit_num);
 }

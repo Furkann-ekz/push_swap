@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:08:25 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/08 17:35:12 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/09 15:33:38 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static int	for_limits_just_one_string(const char *str)
 		return (1);
 	else if ((ft_strlen(str) - i == 10 && !minus)
 		&& (ft_strcmp(str + i, "2147483647") > 0))
-			return (1);
+		return (1);
 	else if ((ft_strlen(str) - i == 10 && minus)
 		&& (ft_strcmp(str + i, "2147483648") > 0))
-			return (1);
+		return (1);
 	return (0);
 }
 
@@ -46,9 +46,7 @@ int	check_limits(const char **av)
 
 	i = -1;
 	while (av[++i])
-	{
 		if (for_limits_just_one_string(av[i]))
 			return (1);
-	}
 	return (0);
 }
