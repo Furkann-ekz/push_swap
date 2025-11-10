@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:10:58 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:25:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:42:51 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 size_t	ft_strlen(const char *str)
 {

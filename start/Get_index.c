@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:35:34 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 14:50:55 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:42:35 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static int	*selection_sort(int *numbers, size_t size)
 {

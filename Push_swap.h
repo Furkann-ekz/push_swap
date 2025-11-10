@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:26:33 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:44:33 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ void	add_node_to_stack(t_list **stack, t_list *new_node);
 void	first_start(const char **av, t_list **a, t_list **b);
 void	check_sorted(t_list **list);
 void	get_index(t_list *list);
+
+void	sort_three(t_list **a, t_list **b);
+
+void	sa(t_list **a);
+void	sb(t_list **b);
+void	ra(t_list **a);
+void	rra(t_list **a);
 
 t_list	*new_node(int num);
 t_list	*find_last_node(t_list *a);

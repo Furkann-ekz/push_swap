@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:16:12 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 15:33:41 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:42:46 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static void	*ft_memset(void *ptr, int value, size_t len)
 {

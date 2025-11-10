@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:08:25 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 15:33:38 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:42:20 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static int	for_limits_just_one_string(const char *str)
 {

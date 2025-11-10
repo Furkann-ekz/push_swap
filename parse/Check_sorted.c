@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:14:01 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 15:31:53 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:42:23 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 void	check_sorted(t_list **list)
 {

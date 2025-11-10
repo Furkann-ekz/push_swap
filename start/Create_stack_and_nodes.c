@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:25:39 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 16:13:20 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:45:44 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 t_list	*new_node(int num)
 {
@@ -27,15 +27,6 @@ t_list	*new_node(int num)
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);
-}
-
-static t_list	*find_last_node(t_list *list)
-{
-	if (!list)
-		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
 }
 
 void	add_node_to_stack(t_list **stack, t_list *new_node)

@@ -9,7 +9,7 @@ SRCS	=	Main.c							\
 			utils/Ft_calloc.c				\
 			utils/Ft_strcmp.c				\
 			utils/Ft_strlen.c				\
-			utils/Stack_utils.c				\
+			utils/Stacks_utils.c			\
 			start/Start.c					\
 			start/Create_stack_and_nodes.c	\
 			start/Get_index.c				\
@@ -17,7 +17,7 @@ SRCS	=	Main.c							\
 			moves/Swap_b.c					\
 			moves/Rotate_a.c				\
 			moves/Reverse_rotate_a.c		\
-			sorting/Sorted_three.c
+			sorting/Sort_three.c
 
 OBJS	=	$(SRCS:.c=.o)
 RM		=	rm -f
