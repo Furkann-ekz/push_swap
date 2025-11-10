@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 18:50:44 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 14:33:53 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_calloc(size_t count, size_t size);
 void	exit_error(t_list **a, t_list **b, int exit_num);
 void	frees(t_list *list);
 void	add_node_to_stack(t_list **stack, t_list *new_node);
-void	start(const char **av, t_list *a, t_list *b);
+void	first_start(const char **av, t_list **a, t_list **b);
 void	check_sorted(t_list **list);
 void	get_index(t_list *list);
 

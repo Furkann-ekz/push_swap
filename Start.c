@@ -6,13 +6,17 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 18:42:31 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 15:14:00 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
+#include "stdio.h"
 
-void	start(const char **av, t_list *a, t_list *b)
+// static void	start_two(t_list **a, t_list **b)
+// {}
+
+void	first_start(const char **av, t_list **a, t_list **b)
 {
 	size_t	i;
 	t_list	*node;
@@ -23,9 +27,13 @@ void	start(const char **av, t_list *a, t_list *b)
 	{
 		node = new_node(ft_atoi(av[i]));
 		if (!node)
-			exit_error(&a, NULL, 1);
-		add_node_to_stack(&a, node);
+			exit_error(a, NULL, 1);
+		add_node_to_stack(a, node);
 	}
-	check_sorted(&a);
-	get_index(&a);
+	check_sorted(a);
+	get_index(*a);
+	(void)b;
+	if (strlen_for_stack(*a) == 2)
+		sa(a);
+	// start_two(a, b);
 }

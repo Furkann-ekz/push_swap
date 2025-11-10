@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Check_sorted.c                                     :+:      :+:    :+:   */
+/*   Sorted_three.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 16:14:01 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 15:31:53 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/10 15:00:48 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/10 15:01:10 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	check_sorted(t_list **list)
-{
-	t_list	*temp;
-	int		num;
-
-	if (!list || !(*list) || !(*list)->next)
-		return ;
-	temp = *list;
-	while (temp->next)
-	{
-		num = temp->num;
-		temp = temp->next;
-		if (num > temp->num)
-			return ;
-	}
-	exit_error(list, NULL, 0);
-}
+void	sorted_three(t_list **a, t_list **b)
+{}

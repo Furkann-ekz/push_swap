@@ -10,7 +10,8 @@ SRCS	=	Check_args.c				\
 			Ft_strcmp.c					\
 			Ft_strlen.c					\
 			Main.c						\
-			Start.c						
+			Start.c						\
+			Get_index.c					\
 
 OBJS	=	$(SRCS:.c=.o)
 RM		=	rm -f
@@ -22,6 +23,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	cc $(CFLAGS) $(OBJS) -o $(NAME)
+	make clean
 
 clean:
 	$(RM) $(OBJS)
