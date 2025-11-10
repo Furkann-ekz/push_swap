@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 14:33:53 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 17:26:33 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ void	check_sorted(t_list **list);
 void	get_index(t_list *list);
 
 t_list	*new_node(int num);
+t_list	*find_last_node(t_list *a);
+
 #endif

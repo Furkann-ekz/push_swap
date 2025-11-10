@@ -1,17 +1,23 @@
-SRCS	=	Check_args.c				\
-			Check_duplicates.c			\
-			Check_limits.c				\
-			Check_sorted.c				\
-			Create_stack_and_nodes.c	\
-			Exit.c						\
-			Free_allocations.c			\
-			Ft_atoi.c					\
-			Ft_calloc.c					\
-			Ft_strcmp.c					\
-			Ft_strlen.c					\
-			Main.c						\
-			Start.c						\
-			Get_index.c					\
+SRCS	=	Main.c							\
+			parse/Check_args.c				\
+			parse/Check_duplicates.c		\
+			parse/Check_limits.c			\
+			parse/Check_sorted.c			\
+			exit/Exit.c						\
+			exit/Free_allocations.c			\
+			utils/Ft_atoi.c					\
+			utils/Ft_calloc.c				\
+			utils/Ft_strcmp.c				\
+			utils/Ft_strlen.c				\
+			utils/Stack_utils.c				\
+			start/Start.c					\
+			start/Create_stack_and_nodes.c	\
+			start/Get_index.c				\
+			moves/Swap_a.c					\
+			moves/Swap_b.c					\
+			moves/Rotate_a.c				\
+			moves/Reverse_rotate_a.c		\
+			sorting/Sorted_three.c
 
 OBJS	=	$(SRCS:.c=.o)
 RM		=	rm -f

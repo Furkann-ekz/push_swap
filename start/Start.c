@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 15:14:00 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/10 15:42:54 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,10 @@ void	first_start(const char **av, t_list **a, t_list **b)
 	(void)b;
 	if (strlen_for_stack(*a) == 2)
 		sa(a);
-	// start_two(a, b);
+	if (strlen_for_stack(*a) == 3)
+	{
+		sort_three(*a);
+		return ;
+	}
+	start_two(a, b);
 }

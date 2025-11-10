@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.c                                             :+:      :+:    :+:   */
+/*   Ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 14:04:14 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:21:21 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/08 17:10:58 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/10 17:25:14 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlen(const char *str)
 {
-	t_list	*a;
-	t_list	*b;
+	size_t	i;
 
-	a = NULL;
-	b = NULL;
-	if (ac < 2)
-		return (0);
-	if (check_args((const char **)(av + 1)))
-		return (write (2, "Error\n", 6));
-	first_start((const char **)av + 1, &a, &b);
-	exit_error(&a, &b, 0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

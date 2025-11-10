@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ft_strlen.c                                        :+:      :+:    :+:   */
+/*   Stacks_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 17:10:58 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/09 17:38:19 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/10 17:25:18 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/10 17:27:58 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 size_t	strlen_for_stack(t_list *list)
 {
@@ -33,4 +23,13 @@ size_t	strlen_for_stack(t_list *list)
 		list = list->next;
 	}
 	return (i);
+}
+
+t_list	*find_last_node(t_list *a)
+{
+	if (!a)
+		return (NULL);
+	while (a->next)
+		a = a->next;
+	return (a);
 }
