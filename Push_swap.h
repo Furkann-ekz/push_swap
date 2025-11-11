@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:44:33 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/11 14:38:19 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	check_sorted(t_list **list);
 void	get_index(t_list *list);
 
 void	sort_three(t_list **a, t_list **b);
+void	set_targets_for_a(t_list **a);
 
 void	sa(t_list **a);
 void	sb(t_list **b);

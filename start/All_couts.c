@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Reverse_rotate_a.c                                 :+:      :+:    :+:   */
+/*   All_couts.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 17:24:19 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/11 14:32:49 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/11 14:37:24 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/11 14:38:08 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Push_swap.h"
+#include "Push_swap.h"
 
-void	rra(t_list **a)
-{
-	t_list	*first;
-	t_list	*middle;
-	t_list	*last;
-
-	if (!a || !(*a) || !(*a)->next)
-		return ;
-	first = *a;
-	last = find_last_node(*a);
-	middle = last->prev;
-	middle->next = NULL;
-	last->prev = NULL;
-	last->next = first;
-	first->prev = last;
-	*a = last;
-}
+void	set_targets_for_a(t_list **a)
+{}

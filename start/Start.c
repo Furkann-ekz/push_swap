@@ -6,15 +6,22 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:45:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/11 14:36:58 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 #include "stdio.h"
 
-// static void	start_two(t_list **a, t_list **b)
-// {}
+static void	continued(t_list **a, t_list **b)
+{
+	pb(*a, *b, 1);
+	pb(*a, *b, 1);
+	while (strlen_for_stack(*a) > 3)
+	{
+		
+	}
+}
 
 void	first_start(const char **av, t_list **a, t_list **b)
 {
@@ -40,5 +47,5 @@ void	first_start(const char **av, t_list **a, t_list **b)
 		sort_three(a, b);
 		return ;
 	}
-	//start_two(a, b);
+	continued(a, b);
 }
