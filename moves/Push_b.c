@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Rotate_a.c                                         :+:      :+:    :+:   */
+/*   Push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 17:23:39 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/12 15:36:51 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/12 15:24:48 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/12 15:43:01 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Push_swap.h"
+#include "Push_swap.h"
 
-void	ra(t_list **a, bool print)
+void	pb(t_list **a, t_list **b, bool print)
 {
-	t_list	*first;
-	t_list	*second;
-	t_list	*last;
+	t_list	*node_a;
+	t_list	*node_b;
+	t_list	*new_first_a;
 
-	if (!a || !(*a) || !(*a)->next)
+	if (!a || !(*a))
 		return ;
-	first = *a;
-	second = first->next;
-	last = find_last_node(*a);
-	second->prev = NULL;
-	first->next = NULL;
-	first->prev = last;
-	last->next = first;
-	*a = second;
 	if (print)
-		write (1, "ra\n", 3);
+		write (1, "pb\n", 3);
+	node_a = *a;
+	new_first_a = (*a)->next;
+	if (*b)
+		node_b = *b;
+	if (node_b)
+	{
+		node_a->next = node_b;
+		node_a->prev = NULL;
+		node_b->prev = node_a;
+	}
+	new_first_a->prev = NULL;
+	(*a) = new_first_a;
+	(*b) = node_a;
 }

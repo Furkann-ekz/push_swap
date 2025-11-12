@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:02:54 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:42:07 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/12 15:37:07 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-void	sa(t_list **a)
+void	sa(t_list **a, bool print)
 {
 	t_list	*first_node;
 	t_list	*second_node;
@@ -33,4 +33,6 @@ void	sa(t_list **a)
 	if (third_node)
 		third_node->prev = first_node;
 	*a = second_node;
+	if (print)
+		write (1, "sa\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/11 14:38:19 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/12 15:25:29 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	sa(t_list **a);
 void	sb(t_list **b);
 void	ra(t_list **a);
 void	rra(t_list **a);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
 
 t_list	*new_node(int num);
 t_list	*find_last_node(t_list *a);

@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 17:24:19 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/11 14:32:49 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/12 15:36:37 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-void	rra(t_list **a)
+void	rra(t_list **a, bool print)
 {
 	t_list	*first;
 	t_list	*middle;
@@ -28,4 +28,6 @@ void	rra(t_list **a)
 	last->next = first;
 	first->prev = last;
 	*a = last;
+	if (print)
+		write (1, "rra\n", 4);
 }
