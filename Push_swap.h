@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/12 15:25:29 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/13 14:24:35 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void	get_index(t_list *list);
 void	sort_three(t_list **a, t_list **b);
 void	set_targets_for_a(t_list **a);
 
-void	sa(t_list **a);
-void	sb(t_list **b);
-void	ra(t_list **a);
-void	rra(t_list **a);
-void	pa(t_list **a, t_list **b);
-void	pb(t_list **a, t_list **b);
+void	sa(t_list **a, bool print);
+void	sb(t_list **b, bool print);
+void	ra(t_list **a, bool print);
+void	rra(t_list **a, bool print);
+void	pa(t_list **a, t_list **b, bool print);
+void	pb(t_list **a, t_list **b, bool print);
 
 t_list	*new_node(int num);
 t_list	*find_last_node(t_list *a);

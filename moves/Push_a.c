@@ -6,24 +6,57 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:24:12 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/12 15:37:30 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/13 15:17:23 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
+static void	a_is_empty(t_list **a, t_list **b)
+{
+	t_list	*b_first;
+	t_list	*b_next;
+
+	b_next = NULL;
+	if ((*b)->next)
+		b_next = (*b)->next;
+	b_first = *b;
+	b_first->next = NULL;
+	b_first->prev = NULL;
+	*a = b_first;
+	if (b_next)
+		b_next->prev = NULL;
+	*b = b_next;
+}
+
+static void	a_is_not_empty(t_list **a, t_list **b)
+{
+	t_list	*a_first;
+	t_list	*b_first;
+	t_list	*b_second;
+
+	b_second = NULL;
+	if ((*b)->next)
+		b_second = (*b)->next;
+	b_first = *b;
+	a_first = *a;
+	(*a)->prev = *b;
+	(*b)->next = *a;
+	(*b)->prev = NULL;
+	if (b_second)
+		b_second->prev = NULL;
+	*a = *b;
+	*b = b_second;
+}
+
 void	pa(t_list **a, t_list **b, bool print)
 {
-	t_list	*node_a;
-	t_list	*node_b;
-
-	if (!a || !b || !(*a) || !(*b) || !(*a)->next || !(*b)->next)
+	if (!b || !(*b))
 		return ;
-	node_a = *a;
-	node_b = *b;
-	node_b->prev = node_a;
-	node_a->next = node_b;
-	node_a->prev = NULL;
 	if (print)
-		write (1, "pb\n", 3);
+		write (1, "pa\n", 3);
+	if (!a || !(*a))
+		a_is_empty(a, b);
+	else
+		a_is_not_empty(a, b);
 }
