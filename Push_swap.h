@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 14:24:35 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/13 15:43:25 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,13 @@ void	set_targets_for_a(t_list **a);
 
 void	sa(t_list **a, bool print);
 void	sb(t_list **b, bool print);
+void	ss(t_list **a, t_list **b, bool print);
 void	ra(t_list **a, bool print);
+void	rb(t_list **b, bool print);
+void	rr(t_list **a, t_list **b, bool print);
 void	rra(t_list **a, bool print);
+void	rrb(t_list **b, bool print);
+void	rrr(t_list **a, t_list **b, bool print);
 void	pa(t_list **a, t_list **b, bool print);
 void	pb(t_list **a, t_list **b, bool print);
 

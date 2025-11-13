@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/11 14:36:58 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/13 15:46:55 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 static void	continued(t_list **a, t_list **b)
 {
-	pb(*a, *b, 1);
-	pb(*a, *b, 1);
+	pb(a, b, 1);
+	pb(a, b, 1);
 	while (strlen_for_stack(*a) > 3)
 	{
 		
@@ -41,7 +41,7 @@ void	first_start(const char **av, t_list **a, t_list **b)
 	get_index(*a);
 	(void)b;
 	if (strlen_for_stack(*a) == 2)
-		sa(a);
+		sa(a, true);
 	if (strlen_for_stack(*a) == 3)
 	{
 		sort_three(a, b);

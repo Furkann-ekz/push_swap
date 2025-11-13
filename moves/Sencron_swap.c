@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   All_couts.c                                        :+:      :+:    :+:   */
+/*   Sencron_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 14:37:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 15:47:40 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/13 15:38:03 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/13 15:42:52 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
-void	set_targets_for_a(t_list **a)
+void	ss(t_list **a, t_list **b, bool print)
 {
-	
+	sa(a, false);
+	sb(b, false);
+	if (print)
+		write (1, "ss\n", 3);
 }
