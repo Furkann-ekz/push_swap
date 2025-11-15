@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 15:46:55 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/15 16:18:39 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	continued(t_list **a, t_list **b)
 	pb(a, b, 1);
 	while (strlen_for_stack(*a) > 3)
 	{
-		
+		set_targets_for_a(a, b);
 	}
 }
 

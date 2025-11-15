@@ -6,34 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:37:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/15 16:13:54 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/15 16:17:45 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
-
-t_list	*find_max_index_node(t_list **b)
-{
-	t_list	*node;
-	t_list	*find;
-	long	index;
-
-	index = -1;
-	node = *b;
-	find = NULL;
-	while (node)
-	{
-		if (node->index > index)
-		{
-			index = node->index;
-			find = node;
-		}
-		node = node->next;
-	}
-	if (index == -1)
-		return (NULL);
-	return (find);
-}
 
 static t_list	*find_target(t_list *a_now, t_list **b)
 {
@@ -55,6 +32,9 @@ static t_list	*find_target(t_list *a_now, t_list **b)
 	}
 	return (target);
 }
+
+void	calculate_cost_for_a(t_list **a, t_list **b)
+{}
 
 void	set_targets_for_a(t_list **a, t_list **b)
 {

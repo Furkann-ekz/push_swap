@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 15:43:25 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/15 16:18:48 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	check_sorted(t_list **list);
 void	get_index(t_list *list);
 
 void	sort_three(t_list **a, t_list **b);
-void	set_targets_for_a(t_list **a);
+void	set_targets_for_a(t_list **a, t_list **b);
 
 void	sa(t_list **a, bool print);
 void	sb(t_list **b, bool print);
@@ -63,5 +63,6 @@ void	pb(t_list **a, t_list **b, bool print);
 
 t_list	*new_node(int num);
 t_list	*find_last_node(t_list *a);
+t_list	*find_max_index_node(t_list **b);
 
 #endif
