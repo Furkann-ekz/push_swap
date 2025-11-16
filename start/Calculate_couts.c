@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:37:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 15:14:11 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:20:06 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,30 @@ void	calculate_cost_for_a(t_list **a, t_list **b, size_t size_a)
 		else
 			node_a->cost_b = (size_b - position_target_b) * -1;
 		node_a = node_a->next;
+	}
+}
+
+void	move_max_to_top_of_b(t_list **b)
+{
+	t_list	*cheapest_node;
+	size_t	size;
+	long	cost;
+
+	size = strlen_for_stack(*b);
+	cheapest_node = find_max_index_node(b);
+	if (cheapest_node->index <= size / 2)
+		cost = cheapest_node->index;
+	else
+		cost = (size - cheapest_node->index) * -1;
+	if (cost > 0)
+	{
+		while (--cost >= 0)
+			rb(b, true);
+	}
+	else
+	{
+		while (++cost <= 0)
+			rrb(b, true);
 	}
 }
 

@@ -6,12 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:01:15 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:36:47 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
-#include "stdio.h"
 
 static void	continued(t_list **a, t_list **b)
 {
@@ -23,8 +22,18 @@ static void	continued(t_list **a, t_list **b)
 		update_physical_index(b);
 		set_targets_for_a(a, b);
 		calculate_costs_for_a(a, b, strlen_for_stack(*a));
+		set_cheapest_node(*a);
 		execute_move(a, b);
 	}
+	sort_three(a, b);
+	while (strlen_for_stack(*b) > 0)
+	{
+		update_physical_index(b);
+		move_max_to_top_of_b(b);
+		pa(a, b, true);
+	}
+	update_physical_index(a);
+	final_spin(a);
 }
 
 void	first_start(const char **av, t_list **a, t_list **b)
@@ -53,5 +62,4 @@ void	first_start(const char **av, t_list **a, t_list **b)
 		return ;
 	}
 	continued(a, b);
-	sort_three(a, b);
 }

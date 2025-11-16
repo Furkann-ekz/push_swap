@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 16:29:47 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:38:14 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ typedef struct s_list
 {
 	int				num;
 	int				index;
-	int				required_index;	// sayının (sıralanmış durumda) olması gereken indeksi
-	int				cost_a;			// elemanı a stackinin tepesine getirme maliyeti
-	int				cost_b;			// elemanı b stackinin tepesine getirme maliyeti
+	int				required_index;
+	int				cost_a;
+	int				cost_b;
 	bool			cheapest;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -49,12 +49,14 @@ void	check_sorted(t_list **list);
 void	get_require_index(t_list *list);
 void	update_physical_index(t_list *list);
 void	calculate_cost_for_a(t_list **a, t_list **b, size_t size_a);
+void	move_max_to_top_of_b(t_list **b);
 void	set_targets_for_a(t_list **a, t_list **b);
 void	set_cheapest_node(t_list **a);
 
 void	first_start(const char **av, t_list **a, t_list **b);
 void	sort_three(t_list **a, t_list **b);
 void	execute_move(t_list **a, t_list **b);
+void	final_spin(t_list **a);
 
 void	sa(t_list **a, bool print);
 void	sb(t_list **b, bool print);
