@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:37:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:20:06 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:45:50 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static t_list	*find_target(t_list *a_now, t_list **b)
 {

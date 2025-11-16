@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:24:12 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 15:17:23 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:45:16 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static void	a_is_empty(t_list **a, t_list **b)
 {

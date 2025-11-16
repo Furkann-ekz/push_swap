@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:43:38 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 15:45:26 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:45:36 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 void	rrr(t_list **a, t_list **b, bool print)
 {

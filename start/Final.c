@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:23:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:37:13 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:45:58 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 void	final_spin(t_list **a)
 {

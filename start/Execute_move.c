@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:27:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:03:29 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:45:54 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static void	double_plus(t_list **node, t_list **a, t_list **b)
 {
