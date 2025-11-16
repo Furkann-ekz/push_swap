@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 14:46:05 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 16:30:14 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	continued(t_list **a, t_list **b)
 		update_physical_index(b);
 		set_targets_for_a(a, b);
 		calculate_costs_for_a(a, b, strlen_for_stack(*a));
+		execute_move(a, b);
 	}
 }
 

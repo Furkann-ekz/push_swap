@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 15:16:55 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 16:29:47 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	set_cheapest_node(t_list **a);
 
 void	first_start(const char **av, t_list **a, t_list **b);
 void	sort_three(t_list **a, t_list **b);
+void	execute_move(t_list **a, t_list **b);
 
 void	sa(t_list **a, bool print);
 void	sb(t_list **b, bool print);
