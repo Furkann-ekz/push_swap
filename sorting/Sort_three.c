@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:00:48 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/13 14:25:13 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 13:15:54 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	sort_three(t_list **a, t_list **b)
 
 	if (!b || !(*b) || !a || !(*a) || !(*a)->next || !(*a)->next->next)
 		return ;
-	first = (*a)->index;
-	second = (*a)->next->index;
-	third = (*a)->next->next->index;
+	first = (*a)->required_index;
+	second = (*a)->next->required_index;
+	third = (*a)->next->next->required_index;
 	if (first == 0 && second == 2 && third == 1)
 	{
 		sa(a, true);

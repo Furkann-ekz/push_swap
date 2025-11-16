@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:35:34 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:42:35 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 14:14:12 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	*create_abstract_array(int *numbers, t_list *list)
 	return (selection_sort(numbers, size));
 }
 
-void	get_index(t_list *list)
+void	get_require_index(t_list *list)
 {
 	t_list	*node;
 	int		*numbers;
@@ -71,7 +71,7 @@ void	get_index(t_list *list)
 		while (node->num != numbers[i])
 			i++;
 		if (node->num == numbers[i])
-			node->index = i;
+			node->required_index = i;
 		node = node->next;
 		i = 0;
 	}

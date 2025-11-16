@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:25:39 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:45:44 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 13:15:31 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*new_node(int num)
 	node->num = num;
 	node->cost_a = -1;
 	node->cost_b = -1;
-	node->index = -1;
+	node->required_index = -1;
 	node->target = NULL;
 	node->prev = NULL;
 	node->next = NULL;

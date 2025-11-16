@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 17:25:18 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/15 16:16:44 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 14:13:20 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,34 @@ t_list	*find_max_index_node(t_list **b)
 {
 	t_list	*node;
 	t_list	*find;
-	long	index;
+	long	required;
 
-	index = -1;
+	required = -1;
 	node = *b;
 	find = NULL;
 	while (node)
 	{
-		if (node->index > index)
+		if (node->required_index > required)
 		{
-			index = node->index;
+			required = node->required_index;
 			find = node;
 		}
 		node = node->next;
 	}
-	if (index == -1)
+	if (required == -1)
 		return (NULL);
 	return (find);
+}
+
+void	update_physical_index(t_list *list)
+{
+	size_t	i;
+
+	i = 0;
+	while (list)
+	{
+		list->index = i;
+		list = list->next;
+		i++;
+	}
 }

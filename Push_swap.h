@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/15 16:18:48 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 15:16:55 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@
 typedef struct s_list
 {
 	int				num;
-	int				index; // sayının (sıralanmış durumda) olması gereken indeksi
-	int				cost_a; // elemanı a stackinin tepesine getirme maliyeti
-	int				cost_b; // elemanı b stackinin tepesine getirme maliyeti
+	int				index;
+	int				required_index;	// sayının (sıralanmış durumda) olması gereken indeksi
+	int				cost_a;			// elemanı a stackinin tepesine getirme maliyeti
+	int				cost_b;			// elemanı b stackinin tepesine getirme maliyeti
+	bool			cheapest;
 	struct s_list	*next;
 	struct s_list	*prev;
 	struct s_list	*target;
@@ -41,13 +43,17 @@ size_t	strlen_for_stack(t_list *list);
 void	*ft_calloc(size_t count, size_t size);
 void	exit_error(t_list **a, t_list **b, int exit_num);
 void	frees(t_list *list);
-void	add_node_to_stack(t_list **stack, t_list *new_node);
-void	first_start(const char **av, t_list **a, t_list **b);
-void	check_sorted(t_list **list);
-void	get_index(t_list *list);
 
-void	sort_three(t_list **a, t_list **b);
+void	add_node_to_stack(t_list **stack, t_list *new_node);
+void	check_sorted(t_list **list);
+void	get_require_index(t_list *list);
+void	update_physical_index(t_list *list);
+void	calculate_cost_for_a(t_list **a, t_list **b, size_t size_a);
 void	set_targets_for_a(t_list **a, t_list **b);
+void	set_cheapest_node(t_list **a);
+
+void	first_start(const char **av, t_list **a, t_list **b);
+void	sort_three(t_list **a, t_list **b);
 
 void	sa(t_list **a, bool print);
 void	sb(t_list **b, bool print);

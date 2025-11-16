@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:07:03 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:42:17 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 15:59:47 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,20 @@ int	check_duplicates(const char **av)
 {
 	size_t	i;
 	size_t	j;
+	int		num1;
+	int		num2;
 
 	i = -1;
 	while (av[++i])
 	{
-		j = -1;
+		j = i;
+		num1 = ft_atoi(av[i]);
 		while (av[++j])
-			if (ft_atoi(av[i]) == ft_atoi(av[j]) && i != j)
+		{
+			num2 = ft_atoi(av[j]);
+			if (num1 == num2)
 				return (1);
+		}
 	}
 	return (0);
 }
