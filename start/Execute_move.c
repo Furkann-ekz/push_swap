@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:27:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 17:54:55 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 17:58:40 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	execute_move(t_list **a, t_list **b)
 	node = *a;
 	while (node->cheapest == false)
 		node = node->next;
-	if (node->cost_a >= 0 && node->cost_b > 0)
+	if (node->cost_a >= 0 && node->cost_b >= 0)
 		double_plus(&node, a, b);
 	else if (node->cost_a >= 0 && node->cost_b < 0)
 		a_plus_b_minus(&node, a, b);

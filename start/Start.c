@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 16:30:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/16 18:01:15 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void	first_start(const char **av, t_list **a, t_list **b)
 		return ;
 	}
 	continued(a, b);
+	sort_three(a, b);
 }
