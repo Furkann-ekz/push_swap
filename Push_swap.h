@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:38:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/17 16:30:26 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_list
 {
+	size_t			index;
 	int				num;
-	int				index;
 	int				required_index;
 	int				cost_a;
 	int				cost_b;
@@ -47,14 +47,14 @@ void	frees(t_list *list);
 void	add_node_to_stack(t_list **stack, t_list *new_node);
 void	check_sorted(t_list **list);
 void	get_require_index(t_list *list);
-void	update_physical_index(t_list *list);
+void	update_physical_index(t_list **list);
 void	calculate_cost_for_a(t_list **a, t_list **b, size_t size_a);
 void	move_max_to_top_of_b(t_list **b);
 void	set_targets_for_a(t_list **a, t_list **b);
 void	set_cheapest_node(t_list **a);
 
 void	first_start(const char **av, t_list **a, t_list **b);
-void	sort_three(t_list **a, t_list **b);
+void	sort_three(t_list **a);
 void	execute_move(t_list **a, t_list **b);
 void	final_spin(t_list **a);
 

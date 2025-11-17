@@ -6,12 +6,12 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:04:14 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/10 17:21:21 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/17 16:20:41 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
-
+#include "stdio.h"
 int	main(int ac, char **av)
 {
 	t_list	*a;

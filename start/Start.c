@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:36:47 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/17 17:48:40 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,19 @@ static void	continued(t_list **a, t_list **b)
 		update_physical_index(a);
 		update_physical_index(b);
 		set_targets_for_a(a, b);
-		calculate_costs_for_a(a, b, strlen_for_stack(*a));
-		set_cheapest_node(*a);
+		calculate_cost_for_a(a, b, strlen_for_stack(*a));
+		set_cheapest_node(a);
 		execute_move(a, b);
 	}
-	sort_three(a, b);
+	sort_three(a);
 	while (strlen_for_stack(*b) > 0)
 	{
+		update_physical_index(a);
 		update_physical_index(b);
-		move_max_to_top_of_b(b);
+		set_targets_for_b(a, b);
+		calculate_cost_for_b(a, b, strlen_for_stack(*b));
+		set_cheapest_node_for_b(b);
+		execute_move_b_to_a(a, b);
 		pa(a, b, true);
 	}
 	update_physical_index(a);
@@ -58,7 +62,7 @@ void	first_start(const char **av, t_list **a, t_list **b)
 		sa(a, true);
 	if (strlen_for_stack(*a) == 3)
 	{
-		sort_three(a, b);
+		sort_three(a);
 		return ;
 	}
 	continued(a, b);

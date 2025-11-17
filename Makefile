@@ -27,7 +27,7 @@ SRCS	=	exit/Exit.c						\
 			utils/Ft_calloc.c				\
 			utils/Ft_strcmp.c				\
 			utils/Ft_strlen.c				\
-			utils/Stack_utils.c				\
+			utils/Stacks_utils.c			\
 			Main.c
 
 OBJS	=	$(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:23:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:45:58 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/17 16:13:15 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	final_spin(t_list **a)
 	index = node->index;
 	if (index <= size / 2)
 		cost = index;
-	else if (index > size / 2)
+	else
 		cost = (size - index) * -1;
 	if (cost > 0)
 		while (--cost >= 0)

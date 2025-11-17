@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:43:38 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:45:36 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/17 17:23:00 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rrr(t_list **a, t_list **b, bool print)
 {
-	if (print)
-		write (1, "rrr\n", 4);
 	rra(a, false);
 	rrb(b, false);
+	if (print)
+		write (1, "rrr\n", 4);
 }
