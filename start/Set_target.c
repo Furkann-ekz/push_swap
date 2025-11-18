@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:49:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/17 18:05:34 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/18 14:14:49 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,27 +71,6 @@ static t_list	*find_target_for_b(t_list *node_b, t_list **a)
 		node_a = node_a->next;
 	}
 	return (target);
-}
-
-t_list	*find_min_index_node(t_list **a)
-{
-	t_list	*node;
-	t_list	*find;
-	long	required;
-
-	required = LONG_MAX;
-	node = *a;
-	find = NULL;
-	while (node)
-	{
-		if (node->required_index < required)
-		{
-			required = node->required_index;
-			find = node;
-		}
-		node = node->next;
-	}
-	return (find);
 }
 
 void	set_targets_for_b(t_list **a, t_list **b)

@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:05:04 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/17 16:30:26 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/18 14:13:28 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	pb(t_list **a, t_list **b, bool print);
 t_list	*new_node(int num);
 t_list	*find_last_node(t_list *a);
 t_list	*find_max_index_node(t_list **b);
+t_list	*find_min_index_node(t_list **a);
 
 #endif
