@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:05:55 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 14:14:21 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/18 14:51:01 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 t_list	*find_max_index_node(t_list **b)
 {
@@ -30,8 +30,6 @@ t_list	*find_max_index_node(t_list **b)
 		}
 		node = node->next;
 	}
-	if (required == -1)
-		return (NULL);
 	return (find);
 }
 

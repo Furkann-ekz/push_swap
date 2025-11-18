@@ -15,42 +15,52 @@ SRCS	=	exit/Exit.c						\
 			parse/Check_duplicates.c		\
 			parse/Check_limits.c			\
 			parse/Check_sorted.c			\
+			parse/Create_new_args.c			\
 			sorting/Sort_three.c			\
-			start/Calculate_couts.c			\
+			start/Calculate_costs.c			\
 			start/Create_stack_and_nodes.c	\
-			start/Execute_move.c			\
+			start/Execute_move_for_a.c		\
+			start/Execute_move_for_b.c		\
 			start/Final.c					\
 			start/Get_require_index.c		\
 			start/Set_cheapest_node.c		\
+			start/Set_target.c				\
 			start/Start.c					\
 			utils/Ft_atoi.c					\
 			utils/Ft_calloc.c				\
 			utils/Ft_strcmp.c				\
 			utils/Ft_strlen.c				\
 			utils/Stacks_utils.c			\
+			utils/Find_min_max_index.c		\
+			utils/Ft_split.c				\
+			utils/Ft_strjoin.c				\
 			Main.c
 
+BNS_SRC	=	
+
 OBJS	=	$(SRCS:.c=.o)
-RM		=	rm -f
+BNS_OBJ	=	$(BNS_SRC:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	push_swap
+BNS_NM	=	checker
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	cc $(CFLAGS) $(OBJS) -o $(NAME)
-	make clean
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
+	rm -f $(BNS_OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
+	rm -f $(BNS_NM)
 
 re: fclean $(NAME)
 
-bonus: $(OBJS)
-	ar rc $(NAME) $(OBJS)
+bonus: $(BNS_OBJ)
+	cc $(CFLAGS) $(BNS_OBJ) -o $(BNS_NM)
 
 .PHONY: all clean fclean re

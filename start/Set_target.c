@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:49:24 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 14:14:49 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/18 15:13:19 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Push_swap.h"
+#include "../Push_swap.h"
 
 static t_list	*find_target_for_a(t_list *a_now, t_list **b)
 {
@@ -42,7 +42,7 @@ void	set_targets_for_a(t_list **a, t_list **b)
 	node_a = *a;
 	while (node_a)
 	{
-		target = find_target(node_a, b);
+		target = find_target_for_a(node_a, b);
 		if (target == NULL)
 			node_a->target = find_max_index_node(b);
 		else
@@ -59,11 +59,11 @@ static t_list	*find_target_for_b(t_list *node_b, t_list **a)
 
 	node_a = *a;
 	target = NULL;
-	target_index = LONG_MIN;
+	target_index = LONG_MAX;
 	while (node_a)
 	{
-		if (node_a->required_index < node_b->required_index
-			&& node_a->required_index > target_index)
+		if (node_a->required_index > node_b->required_index
+			&& node_a->required_index < target_index)
 		{
 			target_index = node_a->required_index;
 			target = node_a;

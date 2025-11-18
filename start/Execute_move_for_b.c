@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Execute_move.c                                     :+:      :+:    :+:   */
+/*   Execute_move_for_b.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:27:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/16 18:45:54 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/18 14:38:37 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/18 14:46:53 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ static void	double_minus(t_list **node, t_list **a, t_list **b)
 	}
 }
 
-void	execute_move(t_list **a, t_list **b)
+void	execute_move_for_b(t_list **a, t_list **b)
 {
 	t_list	*node;
 
-	node = *a;
+	node = *b;
 	while (node->cheapest == false)
 		node = node->next;
 	if (node->cost_a >= 0 && node->cost_b >= 0)
@@ -107,5 +107,5 @@ void	execute_move(t_list **a, t_list **b)
 		a_minus_b_plus(&node, a, b);
 	else if (node->cost_a < 0 && node->cost_b < 0)
 		double_minus(&node, a, b);
-	pb(a, b, true);
+	pa(a, b, true);
 }
