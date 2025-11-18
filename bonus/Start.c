@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Exit.c                                             :+:      :+:    :+:   */
+/*   Start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 15:47:49 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 17:50:10 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/18 17:32:57 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/18 17:43:28 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Push_swap.h"
+#include "Bonus.h"
 
-void	exit_error(t_list **a, t_list **b, int exit_num)
+void	start(const char **av, t_list **a, t_list **b)
 {
-	if (a && *a)
+	size_t	i;
+	t_list	*node;
+
+	node = NULL;
+	i = -1;
+	while (av[++i])
 	{
-		frees(*a);
-		*a = NULL;
+		node = new_node(ft_atoi(av[i]));
+		node->index = i;
+		if (!node)
+			exit_error(a, NULL, 1);
+		add_node_to_stack(a, node);
 	}
-	if (b && *b)
-	{
-		frees(*b);
-		*b = NULL;
-	}
-	if (exit_num == 2)
-		exit (1);
-	if (exit_num != 0)
-		write (2, "Error\n", 6);
-	exit (exit_num);
+	process_commands(a, b);
 }

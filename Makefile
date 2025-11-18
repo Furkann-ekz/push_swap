@@ -36,14 +36,18 @@ SRCS	=	exit/Exit.c						\
 			utils/Ft_strjoin.c				\
 			Main.c
 
-BNS_SRC	=	
+BNS_SRC	=	bonus/get_next_line/Get_next_line.c			\
+			bonus/get_next_line/Get_next_line_utils.c	\
+			bonus/Execute_command.c						\
+			bonus/Main.c								\
+			bonus/Process_commands.c					\
+			bonus/Start.c
 
 OBJS	=	$(SRCS:.c=.o)
 BNS_OBJ	=	$(BNS_SRC:.c=.o)
 CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	push_swap
-BNS_NM	=	checker
 
 all: $(NAME)
 
@@ -60,7 +64,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
-bonus: $(BNS_OBJ)
-	cc $(CFLAGS) $(BNS_OBJ) -o $(BNS_NM)
+bonus: $(OBJS) $(BONUS_OBJS)
+    $(CC) $(CFLAGS) $(OBJS) $(BONUS_OBJS) -o checker
 
 .PHONY: all clean fclean re

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Exit.c                                             :+:      :+:    :+:   */
+/*   Process_commands.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 15:47:49 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 17:50:10 by fekiz            ###   ########.fr       */
+/*   Created: 2025/11/18 17:38:16 by fekiz             #+#    #+#             */
+/*   Updated: 2025/11/18 17:44:26 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Push_swap.h"
+#include "Bonus.h"
 
-void	exit_error(t_list **a, t_list **b, int exit_num)
+void	process_commands(t_list **a, t_list **b)
 {
-	if (a && *a)
+	char	*line;
+
+	while (1)
 	{
-		frees(*a);
-		*a = NULL;
+		line = get_next_line(0);
+		if (!line)
+			break ;
+		if (execute_command(line, a, b))
+		{
+			write (2, "Error\n", 6);
+			free(line);
+			exit_error(a, b, 1);
+		}
+		free(line);
 	}
-	if (b && *b)
-	{
-		frees(*b);
-		*b = NULL;
-	}
-	if (exit_num == 2)
-		exit (1);
-	if (exit_num != 0)
-		write (2, "Error\n", 6);
-	exit (exit_num);
 }
