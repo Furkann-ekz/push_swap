@@ -6,11 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:03:21 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 17:03:31 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/19 13:51:59 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bonus.h"
+#include "../Bonus.h"
 
 static char	*continue_get_st(int len, char *temp, char *st)
 {

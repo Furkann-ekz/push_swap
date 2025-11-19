@@ -6,11 +6,42 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:04:35 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/18 17:50:17 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/18 17:53:17 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bonus.h"
+
+static void	free_str(char **str, bool control)
+{
+	int	i;
+
+	i = 0;
+	if (!str || control == false)
+		return ;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+
+static bool	are_we_need_split(char **av)
+{
+	int		i;
+	int		j;
+
+	i = -1;
+	while (av[++i])
+	{
+		j = -1;
+		while (av[i][++j])
+			if (av[i][j] == ' ' || (av[i][j] >= 9 && av[i][j] <= 13))
+				return (true);
+	}
+	return (false);
+}
 
 static bool	is_sorted(t_list *list)
 {

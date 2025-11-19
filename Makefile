@@ -36,35 +36,38 @@ SRCS	=	exit/Exit.c						\
 			utils/Ft_strjoin.c				\
 			Main.c
 
-BNS_SRC	=	bonus/get_next_line/Get_next_line.c			\
-			bonus/get_next_line/Get_next_line_utils.c	\
-			bonus/Execute_command.c						\
-			bonus/Main.c								\
-			bonus/Process_commands.c					\
-			bonus/Start.c
+BNS_SRC	=	./bonus/get_next_line/Get_next_line.c			\
+			./bonus/get_next_line/Get_next_line_utils.c		\
+			./bonus/Execute_command.c						\
+			./bonus/Checker.c								\
+			./bonus/Process_commands.c						\
+			./bonus/Start.c
+
+NAME	=	push_swap
+BNS_NM	=	checker
+
+CFLAGS	=	-Wall -Wextra -Werror
 
 OBJS	=	$(SRCS:.c=.o)
 BNS_OBJ	=	$(BNS_SRC:.c=.o)
-CFLAGS	=	-Wall -Wextra -Werror
-
-NAME	=	push_swap
+NO_MAIN_OBJS = $(filter-out Main.o, $(OBJS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	cc $(CFLAGS) $(OBJS) -o $(NAME)
 
+bonus: $(BNS_NM)
+
+$(BNS_NM): $(BNS_OBJ) $(NO_MAIN_OBJS)
+	cc $(CFLAGS) $(BNS_OBJ) $(NO_MAIN_OBJS) -o $(BNS_NM)
+
 clean:
-	rm -f $(OBJS)
-	rm -f $(BNS_OBJ)
+	rm -f $(OBJS) $(BNS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
-	rm -f $(BNS_NM)
+	rm -f $(NAME) $(BNS_NM)
 
-re: fclean $(NAME)
+re: fclean $(NAME) $(BONUS_OBJ)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-    $(CC) $(CFLAGS) $(OBJS) $(BONUS_OBJS) -o checker
-
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
