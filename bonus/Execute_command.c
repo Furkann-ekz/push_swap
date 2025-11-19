@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:38:42 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 13:35:37 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/19 14:00:55 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 static bool	for_rotates(char *str, t_list **a, t_list **b)
 {
-	if (!ft_strcmp(str, "ra"))
+	if (!ft_strcmp(str, "ra\n"))
 		ra(a, false);
-	else if (!ft_strcmp(str, "rb"))
+	else if (!ft_strcmp(str, "rb\n"))
 		rb(b, false);
-	else if (!ft_strcmp(str, "rr"))
+	else if (!ft_strcmp(str, "rr\n"))
 		rr(a, b, false);
-	else if (!ft_strcmp(str, "rra"))
+	else if (!ft_strcmp(str, "rra\n"))
 		rra(a, false);
-	else if (!ft_strcmp(str, "rrb"))
+	else if (!ft_strcmp(str, "rrb\n"))
 		rrb(b, false);
-	else if (!ft_strcmp(str, "rrr"))
+	else if (!ft_strcmp(str, "rrr\n"))
 		rrr(a, b, false);
 	else
 		return (true);
@@ -35,15 +35,15 @@ bool	execute_command(char *str, t_list **a, t_list **b)
 {
 	if (!str)
 		return (false);
-	if (!ft_strcmp(str, "sa"))
+	if (!ft_strcmp(str, "sa\n"))
 		sa(a, false);
-	else if (!ft_strcmp(str, "sb"))
+	else if (!ft_strcmp(str, "sb\n"))
 		sb(b, false);
-	else if (!ft_strcmp(str, "ss"))
+	else if (!ft_strcmp(str, "ss\n"))
 		ss(a, b, false);
-	else if (!ft_strcmp(str, "pa"))
+	else if (!ft_strcmp(str, "pa\n"))
 		pa(a, b, false);
-	else if (!ft_strcmp(str, "pb"))
+	else if (!ft_strcmp(str, "pb\n"))
 		pb(a, b, false);
 	else if (for_rotates(str, a, b))
 		return (true);

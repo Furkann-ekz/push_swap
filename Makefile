@@ -17,11 +17,11 @@ SRCS	=	exit/Exit.c						\
 			parse/Check_sorted.c			\
 			parse/Create_new_args.c			\
 			sorting/Sort_three.c			\
+			sorting/Final.c					\
 			start/Calculate_costs.c			\
 			start/Create_stack_and_nodes.c	\
 			start/Execute_move_for_a.c		\
 			start/Execute_move_for_b.c		\
-			start/Final.c					\
 			start/Get_require_index.c		\
 			start/Set_cheapest_node.c		\
 			start/Set_target.c				\
