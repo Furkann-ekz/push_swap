@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:14:50 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:02:14 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:23:27 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-static size_t	i_len(const char *str, char c)
+static size_t	i_len(char *str, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -33,7 +33,7 @@ static size_t	i_len(const char *str, char c)
 	return (count);
 }
 
-static char	*ft_strdup(const char *str)
+static char	*ft_strdup(char *str)
 {
 	int		i;
 	char	*str2;
@@ -51,7 +51,7 @@ static char	*ft_strdup(const char *str)
 	return (str2);
 }
 
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char	*p;
 	size_t	i;
@@ -77,7 +77,7 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	size_t		start;
 	size_t		end;

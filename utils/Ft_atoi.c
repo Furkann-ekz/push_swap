@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:48:57 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:02:08 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:23:23 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	sign;

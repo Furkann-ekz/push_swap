@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:25:39 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:01:48 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:19:20 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-t_list	*new_node(int num)
+t_list	*new_node(int num, char **av)
 {
 	t_list	*node;
 
@@ -26,6 +26,7 @@ t_list	*new_node(int num)
 	node->target = NULL;
 	node->prev = NULL;
 	node->next = NULL;
+	node->argv = av;
 	return (node);
 }
 

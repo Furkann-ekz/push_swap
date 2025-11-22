@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:08:25 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:01:38 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:23:19 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-static int	for_limits_just_one_string(const char *str)
+static int	for_limits_just_one_string(char *str)
 {
 	size_t	i;
 	bool	minus;
@@ -40,7 +40,7 @@ static int	for_limits_just_one_string(const char *str)
 	return (0);
 }
 
-int	check_limits(const char **av)
+int	check_limits(char **av)
 {
 	size_t	i;
 

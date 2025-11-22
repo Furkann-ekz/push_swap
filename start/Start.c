@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:38:31 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:02:02 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:26:42 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	continued(t_list **a, t_list **b)
 	final_spin(a);
 }
 
-void	first_start(const char **av, t_list **a, t_list **b)
+bool	first_start(char **av, t_list **a, t_list **b, bool control)
 {
 	size_t	i;
 	t_list	*node;
@@ -48,21 +48,19 @@ void	first_start(const char **av, t_list **a, t_list **b)
 	i = -1;
 	while (av[++i])
 	{
-		node = new_node(ft_atoi(av[i]));
+		node = new_node(ft_atoi(av[i]), av);
 		node->index = i;
 		if (!node)
-			exit_error(a, NULL, 1);
+			return (true);
 		add_node_to_stack(a, node);
 	}
-	check_sorted(a);
-	get_require_index(*a);
+	check_sorted(a, av, control);
+	get_require_index(*a, av, control);
 	(void)b;
 	if (strlen_for_stack(*a) == 2)
-		return (sa(a, true));
+		return (sa(a, true), false);
 	if (strlen_for_stack(*a) == 3)
-	{
-		sort_three(a);
-		return ;
-	}
+		return (sort_three(a), false);
 	continued(a, b);
+	return (false);
 }

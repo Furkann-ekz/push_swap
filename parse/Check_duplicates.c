@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:07:03 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:01:31 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:23:14 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-int	check_duplicates(const char **av)
+int	check_duplicates(char **av)
 {
 	size_t	i;
 	size_t	j;

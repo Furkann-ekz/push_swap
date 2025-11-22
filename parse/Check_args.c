@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:23:01 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:01:33 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:23:10 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_swap.h"
 
-static int	for_invalid_characters(const char **av)
+static int	for_invalid_characters(char **av)
 {
 	size_t	i;
 	size_t	j;
@@ -31,7 +31,7 @@ static int	for_invalid_characters(const char **av)
 	return (0);
 }
 
-static int	for_sign_duplicates(const char **av)
+static int	for_sign_duplicates(char **av)
 {
 	size_t	i;
 	size_t	j;
@@ -57,7 +57,7 @@ static int	for_sign_duplicates(const char **av)
 	return (0);
 }
 
-static int	for_sign_strings(const char **av)
+static int	for_sign_strings(char **av)
 {
 	size_t	i;
 	size_t	j;
@@ -86,7 +86,7 @@ static int	for_sign_strings(const char **av)
 	return (0);
 }
 
-static int	for_empty_strings(const char **av)
+static int	for_empty_strings(char **av)
 {
 	size_t	i;
 	size_t	j;
@@ -101,7 +101,7 @@ static int	for_empty_strings(const char **av)
 	return (0);
 }
 
-int	check_args(const char **av)
+int	check_args(char **av)
 {
 	if (!av)
 		return (1);

@@ -6,26 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:04:35 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:00:54 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:33:02 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bonus.h"
-
-static void	free_str(char **str, bool control)
-{
-	int	i;
-
-	i = 0;
-	if (!str || control == false)
-		return ;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-}
 
 static bool	are_we_need_split(char **av)
 {
@@ -59,6 +44,23 @@ static bool	is_sorted(t_list *list)
 	return (true);
 }
 
+static void	controller_edges(char **av, bool control)
+{
+	if (!control)
+		return ;
+	if (double_pointer_strlen(av) < 2)
+	{
+		free_str(av, control);
+		exit_error(NULL, NULL, 0);
+	}
+	if (check_args((av)))
+	{
+		write (2, "Error\n", 6);
+		free_str(av, control);
+		exit_error(NULL, NULL, 1);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*a;
@@ -76,11 +78,11 @@ int	main(int ac, char **av)
 		av = create_new_args(av + 1);
 	else
 		av = av + 1;
-	if (check_args((const char **)(av)))
-		return (write (2, "Error\n", 6), free_str(av, control), 1);
+	controller_edges(av, control);
 	if (control == false && ac == 2)
 		return (0);
-	start((const char **)av, &a, &b);
+	if (start(av, &a, &b, control))
+		return (free_str(av, control), exit_error(&a, &b, 1), 1);
 	free_str(av, control);
 	if (!(is_sorted(a) && b == NULL))
 		return (write (1, "KO\n", 3), exit_error(&a, &b, 2), 1);

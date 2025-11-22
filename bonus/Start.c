@@ -6,13 +6,13 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:32:57 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:00:58 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:33:19 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bonus.h"
 
-void	start(const char **av, t_list **a, t_list **b)
+bool	start(char **av, t_list **a, t_list **b)
 {
 	size_t	i;
 	t_list	*node;
@@ -21,11 +21,13 @@ void	start(const char **av, t_list **a, t_list **b)
 	i = -1;
 	while (av[++i])
 	{
-		node = new_node(ft_atoi(av[i]));
+		node = new_node(ft_atoi(av[i]), av);
 		node->index = i;
 		if (!node)
-			exit_error(a, NULL, 1);
+			return (true);
 		add_node_to_stack(a, node);
 	}
-	process_commands(a, b);
+	if (process_commands(a, b))
+		return (true);
+	return (false);
 }

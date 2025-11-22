@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 15:54:45 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:01:01 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:21:00 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,19 @@ void	frees(t_list *list)
 		free(list);
 		list = temp;
 	}
+}
+
+void	free_str(char **str, bool control)
+{
+	int	i;
+
+	i = 0;
+	if (!str || control == false)
+		return ;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

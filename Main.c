@@ -6,26 +6,11 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:04:14 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/19 14:02:25 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:29:29 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
-
-static void	free_str(char **str, bool control)
-{
-	int	i;
-
-	i = 0;
-	if (!str || control == false)
-		return ;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-}
 
 static bool	are_we_need_split(char **av)
 {
@@ -41,6 +26,23 @@ static bool	are_we_need_split(char **av)
 				return (true);
 	}
 	return (false);
+}
+
+static void	controller_edges(char **av, bool control)
+{
+	if (!control)
+		return ;
+	if (double_pointer_strlen(av) < 2)
+	{
+		free_str(av, control);
+		exit_error(NULL, NULL, 0);
+	}
+	if (check_args((av)))
+	{
+		write (2, "Error\n", 6);
+		free_str(av, control);
+		exit_error(NULL, NULL, 1);
+	}
 }
 
 int	main(int ac, char **av)
@@ -60,11 +62,11 @@ int	main(int ac, char **av)
 		av = create_new_args(av + 1);
 	else
 		av = av + 1;
-	if (check_args((const char **)(av)))
-		return (write (2, "Error\n", 6), free_str(av, control), 1);
+	controller_edges(av, control);
 	if (control == false && ac == 2)
 		return (0);
-	first_start((const char **)av, &a, &b);
+	if (first_start(av, &a, &b, control))
+		return (free_str(av, control), exit_error(&a, &b, 1), 1);
 	free_str(av, control);
 	exit_error(&a, &b, 0);
 }
