@@ -6,7 +6,7 @@
 /*   By: fekiz <fekiz@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:35:34 by fekiz             #+#    #+#             */
-/*   Updated: 2025/11/22 16:26:35 by fekiz            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:34:45 by fekiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ static int	*selection_sort(int *numbers, size_t size)
 	return (numbers);
 }
 
-static int	*create_abstract_array(int *numbers, t_list *list, char **av, bool control)
+static int	*create_abstract_array(int *numbers, t_list *list,
+char **av, bool control)
 {
 	t_list	*temp;
 	size_t	size;
